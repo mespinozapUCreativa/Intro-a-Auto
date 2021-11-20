@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class entradaNumerica {
+
+    public static String nletra(int entradaNumerica) {
+
+        entradaNumerica = Character.toLowerCase(entradaNumerica);
+        String cadena = new String();
+        switch (entradaNumerica){
+            case 0: cadena = "cero"; break;
+            case 1: cadena = "uno"; break;
+            case 2: cadena = "dos"; break;
+            case 3: cadena = "tres"; break;
+            case 4: cadena = "cuatro"; break;
+            case 5: cadena = "cinco"; break;
+            case 6: cadena = "seis"; break;
+            case 7: cadena = "siete"; break;
+            case 8: cadena = "ocho"; break;
+            case 9: cadena = "nueve";
+
+            default :break;
+        }
+        return cadena;
+    }
+
+    public static void main(String[] args) {
+
+        String number = "";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese un número: " + number);
+        number = sc.next();
+
+        for (int x = 0; x < number.length(); x++) {
+
+            if (Character.isDigit(number.charAt(x)) == false) {
+                System.out.println(number + " No es entrada válida");
+                break;
+
+            } else {
+                //System.out.println(number + " Entrada válida");
+                System.out.println("Entrada válida: " + nletra(x));
+            }
+
+        }
+    }
+}
